@@ -1,0 +1,29 @@
+# pow computes the integer power of a positive exponent
+#
+# @param base
+# @param exp
+# @return base ** exp
+#
+# procedure pow(base, exp):
+#   result := 1
+#   while --exp >= 0:
+#     result *= base
+#   return result
+
+pow:
+	push 1 # result
+.loop:
+	swap
+	push 1
+	sub # exp - 1
+	dup
+	jn .end
+
+	swap
+	copy 2 # base
+	mul
+	jmp .loop
+.end:
+	swap
+	slide 2 # base, exp
+	ret

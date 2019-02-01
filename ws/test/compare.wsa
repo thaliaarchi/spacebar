@@ -1,0 +1,21 @@
+# compare tests equality of actual and expected values and prints when different
+#
+# @param actual
+# @param expected
+
+compare:
+	dup
+	copy 2 # actual
+	sub
+	jz .equal
+
+	push "expected "
+	call print
+	printi
+	push " but got "
+	call print
+	printi
+.equal
+	drop
+	drop
+	ret

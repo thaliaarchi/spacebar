@@ -1,0 +1,8 @@
+	include pow
+	include compare
+
+	push 5
+	push 7
+	call pow
+	push 78125
+	call compare

@@ -1,0 +1,12 @@
+# print displays a sequence of characters on the stack terminated with zero
+#
+# @param[] string
+
+print:
+	dup
+	jz .end
+	printc
+	jmp print
+.end:
+	drop
+	ret
